@@ -1,178 +1,1421 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Петрова Анастасия</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header class="site-header">
-        <div class="container">
-            <h1>Петрова Анастасия</h1>
-            <p class="subtitle">
-                <strong>Студент группы 1-МГЗ-2</strong> · <em>Санкт-Петербург</em> · интересы: веб-разработка / UX/UI дизайн 
-            </p>
+@font-face {
+  font-family: "Chickpeas";
+  src: url("Chickpeas.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
-            <nav class="nav">
-                <a href="#about">Обо мне</a>
-                <a href="#education">Образование</a>
-                <a href="#hobbies">Увлечения</a>
-                <a href="#contacts">Контакты</a>
-                <a href="#feedback">Форма</a>
-                <a href="https://project12559169.tilda.ws/">Портфолио</a>
-            </nav>
-        </div>
-    </header>
-    <main class="container">
-        <section id="about" class="card">
-            <h2>Обо мне</h2>
+@font-face {
+  font-family: "Edu Hand";
+  src: url("EduAUVICWANTH.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
-            <p>
-        Привет! Меня зовут <strong>Анастасия</strong>. Я учусь на 1 курсе магистратуры в СПбГУПТД. <br>
-        Также я являюсь лаборантом кафедры цифровых и аддитивных технологий. 
-      </p>
+:root {
+  --bg: #ffffe3;
+  --blue: #ddeaf0;
+  --yellow: #f5f2cf;
+  --button-blue: #d8f3fe;
+  --text: #333333;
+  --dark: #111111;
 
-      <p>
-        Мои цели на этот год — <em>успешно сдать сессию и получить должность инженера кафедры</em>. <br>
-        Еще в этом году я хочу пройти стажировку в сфере <strong>веб-дизайна</strong> или <strong>UX/UI дизайна</strong>. <br>
-        <br>
-        <strong>Любимая цитата:</strong> <br>
-      </p>
+  --rows-count: 7;
+  --row-height: 42px;
+  --line-color: #7f7f7f;
+  --border-color: #7f7f7f;
+}
 
-      <blockquote>
-        «Вы никогда не станете тем человеком, которым могли бы стать, если из вашей жизни уберут давление, напряжённость и дисциплину» - Джеймс Г. Билки.
-      </blockquote>
-      <p>
-        <br>
-        <strong>Любимые мемы:</strong> <br>
-      </p>
+* {
+  box-sizing: border-box;
+}
 
-      <img src="https://i.pinimg.com/736x/a7/96/94/a79694a46741449345f78ca1a210aae7.jpg" alt="meme"/>
-      <img src="https://i.pinimg.com/736x/a9/1e/97/a91e97493f57d9c1d8dfc025d96fc6b7.jpg" alt="meme"/>
-      <img src="https://i.pinimg.com/736x/ab/3d/51/ab3d51bb0b926869ece8965b68c4a335.jpg" alt="meme"/>
-        </section>
+html {
+  scroll-behavior: smooth;
+}
 
-        <section id="education" class="card">
-            <h2>Образование</h2>
-            <h3>Основное:</h3>
-            <ul>
-                <li><strong>СПбГУПТД:</strong> Бакалавриат 2021-2025</li>
-                <li><strong>Направление:</strong> Приклдная информатика (IT-технологии создания цифрового контента)</li>
-                <br>
-                <li><strong>СПбГУПТД:</strong> Магистратура 2025-Настоящее время</li>
-                <li><strong>Направление:</strong> Приклдная информатика (Прикладная информатика в дизайне)</li>
-            </ul>
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+}
 
-            <h3>Научные публикации:</h3>
-            <ol>
-                <li>Петрова А.А. <strong>"ИСКУССТВО ВИЗУАЛЬНОЙ КОММУНИКАЦИИ В ПОЛИТИКЕ: РОЛЬ ДИЗАЙНА В СОЗДАНИИ УСПЕШНОГО ПОЛИТИЧЕСКОГО ОБРАЗА"</strong>, 2024</li>
-        <li>Петрова А.А. <strong>"КУКОЛЬНЫЙ ТЕАТР И ЕГО АФИШИ: ВЗГЛЯД НА ИСТОРИЮ И СОВРЕМЕННОСТЬ"</strong>, 2024</li>
-        <li>Петрова А.А. <strong>"WEBAR В КУКОЛЬНОМ ТЕАТРЕ: КАК МАРКЕРНЫЕ ТЕХНОЛОГИИ СОЗДАЮТ ИММЕРСИВНЫЙ ОПЫТ"</strong>, 2025</li>
-        <li>Петрова А.А. <strong>"ПРОЕКТИРОВАНИЕ И ИМПЛЕМЕНТАЦИЯ РЕАКТИВНЫХ АУДИОВИЗУАЛЬНЫХ СИСТЕМ В СРЕДЕ TOUCHDESIGNER"</strong>, 2025</li>
-        <li>Петрова А.А., Славникова М.А. <strong>"СПЕКТРАЛЬНЫЙ АНАЛИЗ И ВИЗУАЛИЗАЦИЯ ЧАСТОТНОГО СПЕКТРА КАК ИНСТРУМЕНТ МЕДИАХУДОЖЕСТВЕННОГО ПРОЕКТИРОВАНИЯ В TOUCHDESIGNER"</strong>, 2025</li>
-            </ol>
-        </section>
+img {
+  display: block;
+  max-width: 100%;
+}
 
-        <section id="hobbies" class="card">
-      <h2>Увлечения</h2>
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-      <ul class="chips">
-        <li>Музыка</li>
-        <li>Спортзал</li>
-        <li>Компьютерные игры</li>
-        <li>Иммерсивное искусство</li>
-      </ul>
+button,
+input,
+textarea {
+  font-family: inherit;
+}
 
-    </section>
+button {
+  cursor: pointer;
+  border: none;
+}
 
-    <section id="contacts" class="card">
-        <h2>Контакты</h2>
-        <ul class="contact-list">
-            <li>
-                Email:
-                <a href="mailto:nastyapetrova197@yandex.ru">nastyapetrova197@yandex.ru</a>
-            </li>
-            <li>
-          Телефон:
-          <a href="tel:+79061307502">+7 (906) 130-75-02</a>
-        </li>
-        <li>
-          GitHub:
-          <a href="https://github.com/dragonburrrn" target="_blank" rel="noopener noreferrer">dragonburrrn</a>
-        </li>
-        <li>
-          Telegram:
-          <a href="https://t.me/dragonburrrn" target="_blank" rel="noopener noreferrer">@dragonburrrn</a>
-        </li>
-        <li>
-          Twitch:
-          <a href="https://www.twitch.tv/dragonburrrn" target="_blank" rel="noopener noreferrer">dragonburrrn</a>
-        </li>
-        </ul>
-    </section>
+.container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
 
-    <section class="card" id="feedback">
-        <h2>Форма обратной связи</h2>
-      <p>Заполните форму, чтобы задать вопрос или оставить предложение. </p>
-      <form id="contactForm" action="#" method="post">
+/* ОБЩИЕ КНОПКИ */
 
-        <div class="form-group">
-            <label for="name">Ваше имя <span class="required">*</span></label>
-            <input type="text" id="name" name="name" placeholder="Анастасия" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Ваш email<span class="required">*</span></label>
-            <input type="email" id="email" name="email" placeholder="example@mail.ru" required>
-        </div>
-        <div class="form-group">
-            <label for="topic">Тема обращения</label>
-            <select id="topic" name="topic">
-                <option value="general">Общий вопрос</option>
-                <option value="study">Вопрос по учебе</option>
-                <option value="design">Сотрудничество (дизайн)</option>
-                <option value="other">Другое</option>
-            </select>
-        </div>
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 190px;
+  min-height: 52px;
+  padding: 0 34px;
+  background-color: var(--button-blue);
+  border-radius: 45px;
+  color: var(--dark);
+  font-size: 16px;
+  line-height: 1;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
 
-        <div class="form-group">
-            <span class="label-like">Тип обращения</span>
-            <div class="radi0-label">
-                <label class="radio-label">
-                    <input type="radio" name="requestTipe" value="question" checked> Вопрос
-                </label>
-                <label class="radio-label">
-                    <input type="radio" name="requestTipe" value="suggestion"> Предложение
-                </label>
-            </div>
-        </div>
-    <div class="form-group">
-        <label for="message">Сообщение <span class="required">*</span></label>
-        <textarea id="message" name="message" rows="4" placeholder="Напишите ваш вопрос или предложение..."></textarea>
-    </div>
-        
-    <div class="form-group checkbox-group">
-        <label class="checkbox-label">
-                    <input type="checkbox" name="consent" required> Я согласен(на) на обработку персональных данных <span class="required">*</span>
-                </label>
-    </div>
+.schedule-preview .button {
+  background-color: #f3e77b;
+}
 
-    <div class="form-actions">
-        <button type="submit" class="submit-btn">Отправить сообщение</button>
-    <button type="reset" class="reset-btn">Очистить форму</button>
-    </div>
+.button:hover {
+  transform: translateY(-2px);
+  opacity: 0.85;
+}
 
-      </form>
+.button--yellow {
+  background-color: var(--button-blue);
+}
 
-    </section>
+/* HEADER */
 
-    </main>
-    <footer class="site-footer">
-    <div class="container">
-      <p>
-        © <span>2026</span> · <strong>Петрова Анастасия</strong>.
-      </p>
-    </div>
-    </footer>
-</body>
-</html>
+.header {
+  background-color: var(--blue);
+  padding: 26px 0;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.logo {
+  font-size: 58px;
+  line-height: 1;
+  letter-spacing: 1px;
+  font-weight: normal;
+  color: var(--dark);
+}
+
+.logo span {
+  margin-left: 6px;
+}
+
+.nav {
+  display: flex;
+  gap: 58px;
+  align-items: center;
+}
+
+.nav a {
+  font-size: 15px;
+  line-height: 1;
+  text-transform: lowercase;
+  color: var(--dark);
+  transition: opacity 0.2s ease;
+}
+
+.nav a:hover {
+  opacity: 0.55;
+}
+
+/* FOOTER */
+
+.footer {
+  background-color: var(--blue);
+  padding: 52px 0 60px;
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.footer__star {
+  font-size: 100px;
+  line-height: 0.8;
+  color: var(--dark);
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 15px;
+}
+
+.footer__phone,
+.footer__address {
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.footer__phone p,
+.footer__address p {
+  margin: 0 0 10px;
+}
+
+.socials {
+  display: flex;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 28px;
+  border: 1px solid var(--dark);
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+/* ОБЩИЕ ЗАГОЛОВКИ */
+
+.section-title {
+  margin: 0 0 44px;
+  text-align: center;
+  font-family: "Chickpeas", Arial, sans-serif;
+  font-size: 58px;
+  font-weight: normal;
+  line-height: 1;
+  color: var(--dark);
+}
+
+/* ГЛАВНАЯ СТРАНИЦА */
+
+.hero {
+  position: relative;
+  height: 760px;
+  overflow: hidden;
+}
+
+.hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__content {
+  position: absolute;
+  top: 42px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 2;
+}
+
+.hero__content h1 {
+  margin: 0 0 26px;
+  font-family: "Chickpeas", cursive;
+  font-size: 66px;
+  font-weight: 400;
+  line-height: 0.95;
+  white-space: nowrap;
+}
+
+.hero__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 210px;
+  height: 55px;
+
+  border-radius: 999px;
+  background: #f3e77b;
+
+  font-size: 24px;
+  color: #111;
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+.about {
+  padding: 85px 0 90px;
+  text-align: center;
+}
+
+.about__image {
+  width: 100vw;
+  max-width: none;
+  height: 360px;
+  margin: 0 calc(50% - 50vw) 38px;
+  border-radius: 0;
+  object-fit: cover;
+}
+
+.about__text {
+  width: min(760px, calc(100% - 40px));
+  margin: 0 auto;
+  font-size: 22px;
+  line-height: 1.45;
+}
+
+.services-preview {
+  padding: 40px 0 100px;
+  overflow: hidden;
+}
+
+.services-preview .section-title {
+  margin-bottom: 22px;
+}
+
+.services-preview__bg {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+
+  padding: 110px 20px 20px;
+
+  background-image:
+    url("images/services-bg.png"),
+    url("images/services-bg.png"),
+    url("images/services-bg.png");
+
+  background-repeat: no-repeat, no-repeat, no-repeat;
+
+  background-position:
+  8% top,
+  50% top,
+  92% top;
+
+  background-size:
+    auto 360px,
+    auto 360px,
+    auto 360px;
+}
+.service-small-card {
+  width: 310px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-small-card__box {
+  min-height: 250px;
+  padding: 34px 34px 30px;
+  border-radius: 28px;
+  background-color: var(--yellow);
+  text-align: center;
+}
+
+.service-small-card h3 {
+  margin: 0 0 22px;
+  font-size: 30px;
+  font-weight: 400;
+  color: var(--dark);
+}
+
+.service-small-card p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.35;
+}
+
+.service-small-card .button {
+  margin-top: 28px;
+}
+
+.schedule-preview {
+  padding: 40px 0 90px;
+}
+
+.schedule-list {
+  width: min(900px, calc(100% - 40px));
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.schedule-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 26px 34px;
+  border-radius: 30px;
+  background-color: var(--button-blue);
+}
+
+.schedule-item h3 {
+  margin: 0 0 8px;
+  font-size: 28px;
+  font-weight: normal;
+  color: var(--dark);
+}
+
+.schedule-item p {
+  margin: 0;
+  font-size: 18px;
+}
+
+.location-preview {
+  width: min(980px, calc(100% - 40px));
+  margin: 0 auto 95px;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.location-preview__address {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  font-size: 26px;
+  line-height: 1.25;
+}
+
+.location-preview__address p {
+  margin: 0;
+}
+
+.location-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.location-icon img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
+}
+
+.location-preview__map {
+  width: 100%;
+  height: 340px;
+  border-radius: 30px;
+  object-fit: cover;
+}
+
+.reviews {
+  padding: 30px 0 90px;
+}
+
+.reviews__inner {
+  width: min(1000px, calc(100% - 40px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 50px 1fr 50px;
+  gap: 28px;
+  align-items: center;
+}
+
+.reviews__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.reviews__arrow {
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.reviews__arrow:hover {
+  opacity: 0.7;
+  transform: scale(1.05);
+}
+
+.reviews__arrow img {
+  width: 42px;
+  height: 42px;
+  display: block;
+  object-fit: contain;
+}
+
+.review-card {
+  min-height: 230px;
+  padding: 30px;
+  border-radius: 32px;
+  background-color: var(--yellow);
+}
+
+.review-card__top {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.review-card__top span {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: var(--button-blue);
+}
+
+.review-card h3 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.review-card p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.45;
+}
+
+.feedback {
+  padding: 20px 0 100px;
+}
+
+.feedback-form {
+  width: min(900px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 44px;
+  border-radius: 36px;
+  background-color: var(--yellow);
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 28px;
+}
+
+.feedback-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 17px;
+}
+
+.feedback-form__left {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.feedback-form__message {
+  grid-row: span 2;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+  width: 100%;
+  border: none;
+  border-radius: 22px;
+  padding: 15px 18px;
+  background-color: #ffffff;
+  font-size: 16px;
+  outline: none;
+}
+
+.feedback-form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.feedback-form button {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
+/* СТРАНИЦА РАСПИСАНИЯ */
+
+.main {
+  padding: 48px 0 0;
+}
+
+.schedule__top {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  width: min(860px, 100%);
+  margin: 0 auto 34px;
+  border-bottom: 1.5px solid var(--dark);
+  padding-bottom: 6px;
+}
+
+.month-label {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.month-name {
+  margin: 0;
+  font-family: "Chickpeas", Arial, sans-serif;
+  font-size: 36px;
+  font-weight: normal;
+  line-height: 1;
+}
+
+.week {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  width: min(860px, 100%);
+  margin: 0 auto;
+}
+
+.event-row {
+  display: grid;
+  grid-template-columns: 74px 1fr;
+  column-gap: 16px;
+  align-items: stretch;
+}
+
+.event-date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(var(--rows-count) * var(--row-height));
+  gap: 6px;
+}
+
+.event-date__number,
+.event-date__weekday {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.event-date__number {
+  font-family: "Edu Hand", Arial, sans-serif;
+  font-size: 24px;
+}
+
+.event-date__weekday {
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+.event-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 170px;
+  height: calc(var(--rows-count) * var(--row-height));
+  border: 1px solid var(--border-color);
+  background-image:
+    linear-gradient(
+      to right,
+      transparent calc(100% - 171px),
+      var(--line-color) calc(100% - 170px),
+      transparent calc(100% - 169px)
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent calc(var(--row-height) - 1px),
+      var(--line-color) calc(var(--row-height) - 1px),
+      var(--line-color) var(--row-height)
+    );
+}
+
+.event-card__content {
+  padding: 0 24px;
+  font-family: "Chickpeas", Arial, sans-serif;
+}
+
+.event-card__content h2 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: normal;
+  line-height: var(--row-height);
+  transform: translateY(5px);
+}
+
+.event-card__content p {
+  margin: 0;
+  max-width: 560px;
+  font-size: 24px;
+  line-height: var(--row-height);
+  transform: translateY(5px);
+}
+
+.event-card__time {
+  position: absolute;
+  right: 22px;
+  bottom: 18px;
+  font-family: "Edu Hand", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.signup-block {
+  display: flex;
+  justify-content: center;
+  margin-top: 34px;
+  margin-bottom: 50px;
+}
+
+
+/* СТРАНИЦА КОНТАКТОВ */
+
+.contacts-page {
+  background-color: var(--bg);
+}
+
+.contacts-section {
+  padding: 80px 0 90px;
+}
+
+.contacts-title {
+  margin: 0 0 70px;
+  text-align: center;
+  font-family: "Chickpeas", Arial, sans-serif;
+  font-size: 58px;
+  font-weight: normal;
+  line-height: 1;
+  color: var(--dark);
+}
+
+.contacts-worktime {
+  width: 980px;
+  max-width: 100%;
+  margin: 0 auto 48px;
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+.contacts-content {
+  width: 980px;
+  max-width: 100%;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 390px 520px;
+  column-gap: 70px;
+  align-items: center;
+}
+
+.contacts-list {
+  display: grid;
+  row-gap: 30px;
+}
+
+.contacts-item {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  column-gap: 42px;
+  align-items: center;
+}
+
+.contacts-icon {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contacts-icon img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
+}
+
+.contacts-item p {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.25;
+}
+
+.contacts-map {
+  width: 520px;
+  height: 320px;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.contacts-map img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* СТРАНИЦА МАСТЕР-КЛАССОВ */
+
+.master-classes-page {
+  background-color: var(--bg);
+}
+
+.mc-hero {
+  padding: 70px 0 80px;
+}
+
+.mc-title {
+  margin: 0 0 58px;
+  text-align: center;
+  font-family: "Chickpeas", Arial, sans-serif;
+  font-size: 80px;
+  font-weight: normal;
+  line-height: 1;
+  color: var(--dark);
+}
+
+.mc-categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.mc-category {
+  text-align: center;
+}
+
+.mc-category img {
+  width: 100%;
+  height: 230px;
+  border-radius: 26px;
+  object-fit: cover;
+}
+
+.mc-category p {
+  margin: 14px 0 0;
+  font-size: 22px;
+  color: var(--dark);
+}
+
+.mc-cards {
+  padding: 0 0 100px;
+}
+
+.mc-cards .container {
+  width: min(1050px, calc(100% - 40px));
+}
+
+.mc-card {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 54px;
+  padding: 42px;
+  border-radius: 32px;
+  background-color: var(--yellow);
+}
+
+.mc-card:last-child {
+  margin-bottom: 0;
+}
+
+.mc-card__text h2 {
+  margin: 0 0 24px;
+  font-size: 42px;
+  font-weight: normal;
+  line-height: 1.15;
+  color: var(--dark);
+}
+
+.mc-card__text p {
+  margin: 0 0 18px;
+  font-size: 18px;
+  line-height: 1.45;
+}
+
+.mc-card__text ul {
+  margin: 0 0 24px;
+  padding-left: 22px;
+}
+
+.mc-card__text li {
+  margin-bottom: 9px;
+  font-size: 18px;
+  line-height: 1.45;
+}
+
+.mc-card__price {
+  margin-top: 26px;
+  font-weight: 700;
+}
+
+.mc-card__image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mc-card__image img {
+  width: 100%;
+  height: 430px;
+  border-radius: 45px;
+  object-fit: cover;
+  margin-bottom: 28px;
+}
+
+.mc-card__image .button {
+  width: 100%;
+  height: 62px;
+  font-size: 20px;
+}
+
+/* СТРАНИЦА ЦВЕТОЧНОЙ ПОДПИСКИ */
+
+
+.subscription-page {
+  background-color: var(--bg);
+}
+
+.subscription-intro {
+  padding: 62px 0 45px;
+}
+
+.subscription-title {
+  margin: 0 0 44px;
+  text-align: center;
+  font-family: "Chickpeas", Arial, sans-serif;
+  font-size: 70px;
+  font-weight: normal;
+  line-height: 1;
+  color: var(--dark);
+}
+
+.subscription-sizes {
+  width: min(900px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.subscription-size {
+  text-align: center;
+}
+
+.subscription-size img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 26px;
+}
+
+.subscription-size p {
+  margin: 14px 0 0;
+  font-size: 20px;
+  color: var(--dark);
+}
+
+.subscription-list {
+  padding: 10px 0 95px;
+}
+
+.subscription-list .container {
+  width: min(900px, calc(100% - 40px));
+}
+
+.subscription-card {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 48px;
+  align-items: center;
+
+  padding: 36px 46px;
+  border-radius: 30px;
+  background-color: var(--yellow);
+}
+
+.subscription-card__text h2 {
+  margin: 0 0 26px;
+  font-family: "Chickpeas", Arial, sans-serif;
+  font-size: 58px;
+  font-weight: normal;
+  line-height: 1;
+  color: var(--dark);
+}
+
+.subscription-card__text p {
+  margin: 0 0 20px;
+  font-size: 18px;
+  line-height: 1.35;
+  color: var(--dark);
+}
+
+.subscription-card__subtitle {
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.subscription-card__image img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  height: auto;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 26px;
+}
+
+.subscription-button-row {
+  display: flex;
+  justify-content: center;
+  margin: 24px 0 52px;
+}
+
+.subscription-button-row:last-child {
+  margin-bottom: 0;
+}
+
+.subscription-button-row .button {
+  min-width: 230px;
+  height: 54px;
+}
+
+/* МОДАЛЬНОЕ ОКНО */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.modal.is-open {
+  display: flex;
+}
+
+.modal__window {
+  position: relative;
+  width: min(520px, 100%);
+  padding: 42px;
+  border-radius: 34px;
+  background-color: var(--yellow);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.modal__close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  background: transparent;
+  font-size: 34px;
+  line-height: 1;
+  color: var(--dark);
+}
+
+.modal__window h2 {
+  margin: 0 0 26px;
+  text-align: center;
+  font-family: "Chickpeas", Arial, sans-serif;
+  font-size: 52px;
+  font-weight: normal;
+  line-height: 1;
+  color: var(--dark);
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modal-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 16px;
+}
+
+.modal-form input,
+.modal-form textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 18px;
+  background-color: #ffffff;
+  padding: 14px 18px;
+  font-size: 16px;
+}
+
+.modal-form textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.modal-form button {
+  margin-top: 8px;
+  align-self: center;
+}
+
+/* АДАПТИВ */
+
+@media (max-width: 1000px) {
+  .mc-card {
+    grid-template-columns: 1fr;
+  }
+
+  .mc-card__image {
+    order: -1;
+  }
+
+  .mc-card__image img {
+    height: 360px;
+  }
+}
+
+@media (max-width: 900px) {
+  .header__inner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px 28px;
+  }
+
+  .logo {
+    font-size: 42px;
+  }
+
+  .hero {
+    min-height: 520px;
+  }
+
+  .hero__content h1 {
+    font-size: 56px;
+  }
+
+  .services-preview__bg {
+    grid-template-columns: 1fr;
+    padding: 44px 28px;
+  }
+
+  .schedule-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .location-preview {
+    grid-template-columns: 1fr;
+  }
+
+  .reviews__inner {
+    grid-template-columns: 1fr;
+  }
+
+.reviews__cards {
+  grid-template-columns: 1fr;
+}
+
+.subscription-sizes {
+  grid-template-columns: 1fr;
+  max-width: 520px;
+}
+
+.subscription-card {
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+.subscription-card__image {
+  order: -1;
+}
+
+  .reviews__arrow {
+    display: none;
+  }
+
+  .feedback-form {
+    grid-template-columns: 1fr;
+    padding: 34px 24px;
+  }
+
+  .event-row {
+    grid-template-columns: 1fr;
+    row-gap: 8px;
+  }
+
+  .event-date {
+    height: auto;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+
+  .event-date__number,
+  .event-date__weekday {
+    writing-mode: horizontal-tb;
+    transform: none;
+  }
+
+  .event-card {
+    grid-template-columns: 1fr 140px;
+    background-image:
+      linear-gradient(
+        to right,
+        transparent calc(100% - 141px),
+        var(--line-color) calc(100% - 140px),
+        transparent calc(100% - 139px)
+      ),
+      repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent calc(var(--row-height) - 1px),
+        var(--line-color) calc(var(--row-height) - 1px),
+        var(--line-color) var(--row-height)
+      );
+  }
+
+  .event-card__content {
+    padding: 0 22px;
+  }
+
+  .event-card__time {
+    right: 12px;
+    bottom: 16px;
+  }
+
+  .contacts-section {
+    padding: 60px 0 70px;
+  }
+
+  .contacts-title {
+    margin-bottom: 48px;
+    font-size: 46px;
+  }
+
+  .contacts-worktime {
+    font-size: 22px;
+    margin-bottom: 36px;
+  }
+
+  .contacts-content {
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+  }
+
+  .contacts-list {
+    gap: 24px;
+  }
+
+  .contacts-item p {
+    font-size: 18px;
+  }
+
+  .contacts-map {
+    height: 280px;
+  }
+
+  .footer__inner {
+    flex-direction: column;
+  }
+
+  .mc-title {
+    font-size: 62px;
+  }
+
+  .mc-categories {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+}
+.subscription-hero__inner {
+  grid-template-columns: 1fr;
+}
+
+.subscription-hero__image {
+  order: -1;
+}
+
+.subscription-plans__grid {
+  grid-template-columns: 1fr;
+}
+
+.subscription-steps {
+  grid-template-columns: 1fr;
+}
+
+@media (max-width: 560px) {
+  .container {
+    width: min(100% - 24px, 1180px);
+  }
+
+  .section-title {
+    font-size: 44px;
+  }
+
+  .hero {
+    min-height: 460px;
+  }
+
+  .hero__content h1 {
+    font-size: 44px;
+  }
+
+  .about__text {
+    font-size: 18px;
+  }
+
+  .about__image {
+    height: 260px;
+  }
+
+  .service-small-card h3 {
+    font-size: 34px;
+  }
+
+  .schedule-item h3 {
+    font-size: 22px;
+  }
+
+  .location-preview__address {
+    font-size: 20px;
+  }
+
+  .event-card__content h2 {
+    font-size: 22px;
+  }
+
+  .event-card__content p {
+    font-size: 18px;
+  }
+
+  .event-card__time {
+    font-size: 18px;
+  }
+
+  .mc-hero {
+    padding: 54px 0 60px;
+  }
+
+  .mc-title {
+    font-size: 48px;
+    margin-bottom: 38px;
+  }
+
+  .mc-category img {
+    height: 190px;
+  }
+
+  .mc-card {
+    padding: 28px 22px;
+    border-radius: 28px;
+  }
+
+  .mc-card__text h2 {
+    font-size: 30px;
+  }
+
+  .mc-card__text p,
+  .mc-card__text li {
+    font-size: 16px;
+  }
+
+  .mc-card__image img {
+    height: 260px;
+  }
+
+  .mc-card__image .button {
+    height: 56px;
+    font-size: 17px;
+  }
+
+  .modal__window {
+    padding: 36px 24px 28px;
+  }
+
+  .modal__window h2 {
+    font-size: 42px;
+  }
+}
+
+.subscription-hero {
+  padding: 54px 0 70px;
+}
+
+.subscription-hero__text h1 {
+  font-size: 48px;
+}
+
+.subscription-hero__text p {
+  font-size: 18px;
+}
+
+.subscription-hero__image img {
+  height: 280px;
+}
+
+.subscription-card h3 {
+  font-size: 32px;
+}
+
+.subscription-final__box {
+  padding: 36px 24px;
+}
+
+.subscription-final__box h2 {
+  font-size: 36px;
+}
+
+.subscription-final__box p {
+  font-size: 17px;
+}
+
+.subscription-title {
+  font-size: 50px;
+}
+
+.subscription-size img {
+  height: 180px;
+}
+
+.subscription-card {
+  padding: 28px 22px;
+}
+
+.subscription-card__text h2 {
+  font-size: 42px;
+}
+
+.subscription-card__text p {
+  font-size: 16px;
+}
+
+.subscription-card__image img {
+  height: 230px;
+}
